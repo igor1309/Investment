@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView : View {
     @State private var isAssetsOpen = false
-    @State private var isWorkingCapitalOpen = false
+    @State private var isWorkingCapitalOpen = true
     
     let ass = Assets(selingPrice: 280000, allAdditions: 157000, services: 8800, bureaucracy: 6700, rentDeposit: 7700, maxLoss: 47600, extraCapital: 25000)
 
@@ -20,30 +20,30 @@ struct ContentView : View {
                 Section(header: Text("Assets".uppercased())) {
                     
                     SectionTotal(total: "Total Assets",
-                    value: ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy,
-                    isOpen: isAssetsOpen).previewLayout(.sizeThatFits)
+                                 value: ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy,
+                                 isOpen: isAssetsOpen).previewLayout(.sizeThatFits)
                         .tapAction { self.isAssetsOpen.toggle() }
                     
                     
                     if isAssetsOpen {
                         SectionItem(heading: "Selling Price",
-                        subHeading: "Asked or estimated price",
-                        value: ass.selingPrice)
+                                    subHeading: "Asked or estimated price",
+                                    value: ass.selingPrice)
                             .tapAction(count: 2, {})
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                         
                         
                         SectionItem(heading: "All Additions",
-                        subHeading: "Furniture, Kitchen, Structural, Renovation, etc",
-                        value: ass.allAdditions)
+                                    subHeading: "Furniture, Kitchen, Structural, Renovation, etc",
+                                    value: ass.allAdditions)
                     
                         SectionItem(heading: "Services",
-                        subHeading: "Real estate agent graphic designer, web, PR (openning), etc",
-                        value: ass.services)
+                                    subHeading: "Real estate agent graphic designer, web, PR (openning), etc",
+                                    value: ass.services)
                     
                         SectionItem(heading: "Bureaucracy",
-                        subHeading: "Notary, company registration, etc",
-                        value: ass.bureaucracy)
+                                    subHeading: "Notary, company registration, etc",
+                                    value: ass.bureaucracy)
                         
                     }
                 }
@@ -51,22 +51,22 @@ struct ContentView : View {
                 Section(header: Text("Working Capital".uppercased())) {
                     
                     SectionTotal(total: "Working Capital",
-                    value: ass.rentDeposit + ass.maxLoss + ass.extraCapital,
-                    isOpen: isWorkingCapitalOpen).previewLayout(.sizeThatFits)
+                                 value: ass.rentDeposit + ass.maxLoss + ass.extraCapital,
+                                 isOpen: isWorkingCapitalOpen).previewLayout(.sizeThatFits)
                         .tapAction { self.isWorkingCapitalOpen.toggle() }
                     
                     if isWorkingCapitalOpen {
                         SectionItem(heading: "Rent Deposit",
-                        subHeading: "",
-                        value: ass.rentDeposit)
+                                    subHeading: "",
+                                    value: ass.rentDeposit)
                         
                         SectionItem(heading: "Max Cumulative Loss",
-                        subHeading: "Estimated peak cummulative loss to be finaced by investment",
-                        value: ass.maxLoss)
+                                    subHeading: "Estimated peak cummulative loss to be finaced by investment",
+                                    value: ass.maxLoss)
                         
                         SectionItem(heading: "Extra Working Capital",
-                        subHeading: "\"Buffer\"",
-                        value: ass.extraCapital)
+                                    subHeading: "\"Buffer\"",
+                                    value: ass.extraCapital)
                     }
                 }
             
