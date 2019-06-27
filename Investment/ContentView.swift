@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct ContentView : View {
-    @State private var isAssetsOpen = false
+    @ObjectBinding var store = AssetStore()
+    
+    @State private var isAssetsOpen = true
     @State private var isWorkingCapitalOpen = true
     
     let ass = Assets(selingPrice: 280000, allAdditions: 157000, services: 8800, bureaucracy: 6700, rentDeposit: 7700, maxLoss: 47600, extraCapital: 25000)
@@ -26,23 +28,10 @@ struct ContentView : View {
                     
                     
                     if isAssetsOpen {
-                        SectionItem(heading: "Selling Price",
-                                    subHeading: "Asked or estimated price",
-                                    value: ass.selingPrice)
-                        
-                        
-                        SectionItem(heading: "All Additions",
-                                    subHeading: "Furniture, Kitchen, Structural, Renovation, etc",
-                                    value: ass.allAdditions)
-                    
-                        SectionItem(heading: "Services",
-                                    subHeading: "Real estate agent graphic designer, web, PR (openning), etc",
-                                    value: ass.services)
-                    
-                        SectionItem(heading: "Bureaucracy",
-                                    subHeading: "Notary, company registration, etc",
-                                    value: ass.bureaucracy)
-                        
+                        ForEach(store.assets) { asset in if asset.isDepreciable {
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value)
+                            }
+                        }
                     }
                 }
                 
@@ -54,19 +43,12 @@ struct ContentView : View {
                         .tapAction { self.isWorkingCapitalOpen.toggle() }
                     
                     if isWorkingCapitalOpen {
-                        SectionItem(heading: "Rent Deposit",
-                                    subHeading: "",
-                                    value: ass.rentDeposit)
-//TODO: - сделать изменение значения при двойном тапе вызовом нового вью
-//  для тестирования   destination: Text("view for editing…")
-                        
-                        SectionItem(heading: "Max Cumulative Loss",
-                                    subHeading: "Estimated peak cummulative loss to be finaced by investment",
-                                    value: ass.maxLoss)
-                        
-                        SectionItem(heading: "Extra Working Capital",
-                                    subHeading: "\"Buffer\"",
-                                    value: ass.extraCapital)
+                        ForEach(store.assets) { asset in if !asset.isDepreciable {
+                            //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
+                            //  для тестирования   destination: Text("view for editing…")
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value)
+                            }
+                        }
                     }
                 }
             
@@ -77,7 +59,14 @@ struct ContentView : View {
                         Text("\(ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy + ass.rentDeposit + ass.maxLoss + ass.extraCapital)")
                             .padding(.trailing)
                     }
-                    
+                }
+                
+                Section(header: Text("Notes".uppercased())) {
+                    //TODO: - надо бы текст переписать (копирайт!!)
+                    Text("To calculate depreciation we use 3 and 5 years as live-time and straight-line method (equal amounts). We Consider the Salvage value of zero.").italic()
+                        .font(.caption)
+                        .lineLimit(nil)
+                        .foregroundColor(Color.secondary)
                 }
             }
                 
@@ -90,10 +79,10 @@ struct ContentView : View {
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-            ContentView()
+            ContentView(store: AssetStore(assets: testAssetsNew))
+            ContentView(store: AssetStore(assets: testAssetsNew))
                 .environment(\.colorScheme, .dark)
-//                .environment(\.sizeCategory, .extraExtraLarge)
+                .environment(\.sizeCategory, .extraLarge)
         }
     }
 }

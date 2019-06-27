@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A268DF022C41D3200521A72 /* SectionTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A268DEF22C41D3200521A72 /* SectionTotal.swift */; };
+		2A268DFA22C4DFD700521A72 /* AssetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A268DF922C4DFD700521A72 /* AssetStore.swift */; };
 		2A3CBC3B22C41706002D3E3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC3A22C41706002D3E3E /* AppDelegate.swift */; };
 		2A3CBC3D22C41706002D3E3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC3C22C41706002D3E3E /* SceneDelegate.swift */; };
 		2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC3E22C41706002D3E3E /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		2A268DEF22C41D3200521A72 /* SectionTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTotal.swift; sourceTree = "<group>"; };
+		2A268DF922C4DFD700521A72 /* AssetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetStore.swift; sourceTree = "<group>"; };
 		2A3CBC3722C41706002D3E3E /* Investment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Investment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3CBC3A22C41706002D3E3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A3CBC3C22C41706002D3E3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		2A3CBC2E22C41706002D3E3E = {
 			isa = PBXGroup;
 			children = (
+				2A268DF922C4DFD700521A72 /* AssetStore.swift */,
 				2A3CBC3922C41706002D3E3E /* Investment */,
 				2A3CBC5022C41706002D3E3E /* InvestmentTests */,
 				2A3CBC5B22C41706002D3E3E /* InvestmentUITests */,
@@ -280,6 +283,7 @@
 				2A3CBC3B22C41706002D3E3E /* AppDelegate.swift in Sources */,
 				2A3CBC3D22C41706002D3E3E /* SceneDelegate.swift in Sources */,
 				2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */,
+				2A268DFA22C4DFD700521A72 /* AssetStore.swift in Sources */,
 				2A268DF022C41D3200521A72 /* SectionTotal.swift in Sources */,
 				2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */,
 			);
