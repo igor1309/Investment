@@ -57,9 +57,8 @@ struct ContentView : View {
                         SectionItem(heading: "Rent Deposit",
                                     subHeading: "",
                                     value: ass.rentDeposit)
-//                        //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
-                        
-//                        destination: Text("view for editing…")
+//TODO: - сделать изменение значения при двойном тапе вызовом нового вью
+//  для тестирования   destination: Text("view for editing…")
                         
                         SectionItem(heading: "Max Cumulative Loss",
                                     subHeading: "Estimated peak cummulative loss to be finaced by investment",

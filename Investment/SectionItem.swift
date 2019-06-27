@@ -13,6 +13,8 @@ struct SectionItem : View {
     var subHeading: String
     var value: Int
     
+    @State var name: String = "3444"
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -23,6 +25,8 @@ struct SectionItem : View {
                     .lineLimit(nil)
             }
             Spacer()
+            //MARK: -
+            //MARK: TextField($name, placeholder: Text("\(value)")) ломает выранивание. Пока не найду рещение с тектовым полем возвращаю просто Text("…")
             Text("\(value)")
                 .font(.callout)
                 .padding(.trailing)
