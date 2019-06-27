@@ -29,8 +29,6 @@ struct ContentView : View {
                         SectionItem(heading: "Selling Price",
                                     subHeading: "Asked or estimated price",
                                     value: ass.selingPrice)
-                            .tapAction(count: 2, {})
-                            //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                         
                         
                         SectionItem(heading: "All Additions",
@@ -59,6 +57,9 @@ struct ContentView : View {
                         SectionItem(heading: "Rent Deposit",
                                     subHeading: "",
                                     value: ass.rentDeposit)
+//                        //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
+                        
+//                        destination: Text("view for editing…")
                         
                         SectionItem(heading: "Max Cumulative Loss",
                                     subHeading: "Estimated peak cummulative loss to be finaced by investment",
@@ -93,7 +94,7 @@ struct ContentView_Previews : PreviewProvider {
             ContentView()
             ContentView()
                 .environment(\.colorScheme, .dark)
-                .environment(\.sizeCategory, .extraExtraLarge)
+//                .environment(\.sizeCategory, .extraExtraLarge)
         }
     }
 }
