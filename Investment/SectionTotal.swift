@@ -12,15 +12,26 @@ struct SectionTotal : View {
     var total: String
     var value: Int
     var isOpen: Bool
+    var depreciation: Int
+    
+    let currency = "€"
+
     
     var body: some View {
-        HStack {
-            Text(total.uppercased()).font(.subheadline)
-            Spacer()
-            Text("\(value)")
-            Image(systemName: isOpen ? "chevron.up" : "chevron.down")
-                .foregroundColor(.accentColor)
-                .imageScale(.small)
+        VStack {
+            HStack {
+                Text(total.uppercased()).font(.subheadline)
+                Spacer()
+                Text("\(value)")
+                Image(systemName: isOpen ? "chevron.up" : "chevron.down")
+                    .foregroundColor(.accentColor)
+                    .imageScale(.small)
+            }
+            if depreciation != 0 {
+                Text("Depreciation: \(currency)\(Int(depreciation)) per month")
+                    .font(.footnote)
+                    .color(.secondary)
+            }
         }
     }
 }
@@ -28,7 +39,10 @@ struct SectionTotal : View {
 #if DEBUG
 struct SectionTotal_Previews : PreviewProvider {
     static var previews: some View {
-        SectionTotal(total: "Total Assets", value: 255000, isOpen: true).previewLayout(.sizeThatFits)
+        Group {
+            SectionTotal(total: "Total Assets", value: 255000, isOpen: true, depreciation: 4566).previewLayout(.sizeThatFits)
+            SectionTotal(total: "Total Assets", value: 255000, isOpen: true, depreciation: 0).previewLayout(.sizeThatFits)
+        }
     }
 }
 #endif

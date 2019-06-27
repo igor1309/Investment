@@ -14,40 +14,39 @@ struct ContentView : View {
     @State private var isAssetsOpen = true
     @State private var isWorkingCapitalOpen = true
     
-    let ass = Assets(selingPrice: 280000, allAdditions: 157000, services: 8800, bureaucracy: 6700, rentDeposit: 7700, maxLoss: 47600, extraCapital: 25000)
-
+    let currency = "€"
+    
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Assets".uppercased())) {
-                    
-                    //MARK: добавить амортизацию
                     SectionTotal(total: "Total Assets",
-                                 value: ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy,
-                                 isOpen: isAssetsOpen).previewLayout(.sizeThatFits)
+                                 value: store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value }),
+                                 isOpen: isAssetsOpen,
+                                 depreciation: store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / $1.lifetime / 12 }))
                         .tapAction { self.isAssetsOpen.toggle() }
-                    
                     
                     if isAssetsOpen {
                         ForEach(store.assets) { asset in if asset.isDepreciable {
                             SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
+                            //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
+                            //  для тестирования   destination: Text("view for editing…")
                             }
                         }
                     }
                 }
                 
                 Section(header: Text("Working Capital".uppercased())) {
-                    
                     SectionTotal(total: "Working Capital",
-                                 value: ass.rentDeposit + ass.maxLoss + ass.extraCapital,
-                                 isOpen: isWorkingCapitalOpen).previewLayout(.sizeThatFits)
+                                 value: store.assets.filter({ !$0.isDepreciable }).reduce(0, { $0 + $1.value }),
+                                 isOpen: isWorkingCapitalOpen, depreciation: 0).previewLayout(.sizeThatFits)
                         .tapAction { self.isWorkingCapitalOpen.toggle() }
                     
                     if isWorkingCapitalOpen {
                         ForEach(store.assets) { asset in if !asset.isDepreciable {
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                             //  для тестирования   destination: Text("view for editing…")
-                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
                             }
                         }
                     }
@@ -57,13 +56,12 @@ struct ContentView : View {
                     HStack {
                         Text("Total Investment".uppercased())
                         Spacer()
-                        Text("\(ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy + ass.rentDeposit + ass.maxLoss + ass.extraCapital)")
+                        Text("\(store.assets.reduce(0, { $0 + $1.value }))")
                             .padding(.trailing)
                     }
                 }
                 
                 Section(header: Text("Notes".uppercased())) {
-                    //TODO: - надо бы текст переписать (копирайт!!)
                     Text("To calculate depreciation we use 3 and 5 years as live-time and straight-line method (equal amounts). We Consider the Salvage value of zero.").italic()
                         .font(.caption)
                         .lineLimit(nil)
@@ -73,6 +71,13 @@ struct ContentView : View {
                 
                 .navigationBarTitle(Text("Investment"))
         }
+    }
+    
+    func value() -> Int {
+        store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value })
+    }
+    func depreciation() -> Int {
+        store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / $1.lifetime / 12 })
     }
 }
 

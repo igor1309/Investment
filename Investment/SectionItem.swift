@@ -33,7 +33,7 @@ struct SectionItem : View {
                 Text("\(value)")
                     .font(.callout)
                     .padding(.trailing)
-            }
+            }.padding(0)
             
             if lifetime != 0 {
                 Text("Depreciation: \(lifetime) years, \(currency)\(value / lifetime / 12) per month")
