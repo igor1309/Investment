@@ -12,24 +12,35 @@ struct SectionItem : View {
     var heading: String
     var subHeading: String
     var value: Int
+    var lifetime: Int
     
-    @State var name: String = "3444"
-    
+    let currency = "€"
+        
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(heading)
-                Text(subHeading)
-                    .font(.footnote)
-                    .color(.secondary)
-                    .lineLimit(nil)
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(heading)
+                    Text(subHeading)
+                        .font(.footnote)
+                        .color(.secondary)
+                        .lineLimit(nil)
+                }
+                
+                Spacer()
+
+                //MARK: TextField($name, placeholder: Text("\(value)")) ломает выранивание. Пока не найду решение с тектовым полем возвращаю просто Text("…")
+                Text("\(value)")
+                    .font(.callout)
+                    .padding(.trailing)
             }
-            Spacer()
-            //MARK: -
-            //MARK: TextField($name, placeholder: Text("\(value)")) ломает выранивание. Пока не найду рещение с тектовым полем возвращаю просто Text("…")
-            Text("\(value)")
-                .font(.callout)
-                .padding(.trailing)
+            
+            if lifetime != 0 {
+                Text("Depreciation: \(lifetime) years, \(currency)\(value / lifetime / 12) per month")
+                    .font(.caption)
+                    .color(.secondary)
+                    .padding(0)
+            }
         }
     }
 }
@@ -37,10 +48,12 @@ struct SectionItem : View {
 #if DEBUG
 struct SectionItem_Previews : PreviewProvider {
     static var previews: some View {
-        SectionItem(heading: "Selling Price",
-                    subHeading: "Real estate agent graphic designer, web, PR (openning), etc",
-                    value: 255000)
-            .previewLayout(.sizeThatFits)
+        Group {
+            SectionItem(heading: "Selling Price", subHeading: "Real estate agent graphic designer, web, PR (openning), etc", value: 255000, lifetime: 5)
+                .previewLayout(.sizeThatFits)
+            SectionItem(heading: "Extra Working Capital", subHeading: "\"Buffer\"", value: 255000, lifetime: 0)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }
 #endif

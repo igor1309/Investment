@@ -21,6 +21,7 @@ struct ContentView : View {
             Form {
                 Section(header: Text("Assets".uppercased())) {
                     
+                    //MARK: добавить амортизацию
                     SectionTotal(total: "Total Assets",
                                  value: ass.selingPrice + ass.allAdditions + ass.services + ass.bureaucracy,
                                  isOpen: isAssetsOpen).previewLayout(.sizeThatFits)
@@ -29,7 +30,7 @@ struct ContentView : View {
                     
                     if isAssetsOpen {
                         ForEach(store.assets) { asset in if asset.isDepreciable {
-                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value)
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
                             }
                         }
                     }
@@ -46,7 +47,7 @@ struct ContentView : View {
                         ForEach(store.assets) { asset in if !asset.isDepreciable {
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                             //  для тестирования   destination: Text("view for editing…")
-                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value)
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
                             }
                         }
                     }
@@ -80,9 +81,9 @@ struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         Group {
             ContentView(store: AssetStore(assets: testAssetsNew))
-            ContentView(store: AssetStore(assets: testAssetsNew))
-                .environment(\.colorScheme, .dark)
-                .environment(\.sizeCategory, .extraLarge)
+//            ContentView(store: AssetStore(assets: testAssetsNew))
+//                .environment(\.colorScheme, .dark)
+//                .environment(\.sizeCategory, .extraLarge)
         }
     }
 }
