@@ -20,6 +20,7 @@
 		2A3CBC6B22C41767002D3E3E /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC6A22C41767002D3E3E /* SectionItem.swift */; };
 		2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC6C22C41802002D3E3E /* Assets.swift */; };
 		2A88226222C50696009E46FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226122C50696009E46FA /* Extensions.swift */; };
+		2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226322C54B5D009E46FA /* EditAssetForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		2A3CBC6A22C41767002D3E3E /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		2A3CBC6C22C41802002D3E3E /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		2A88226122C50696009E46FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2A88226322C54B5D009E46FA /* EditAssetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				2A3CBC6A22C41767002D3E3E /* SectionItem.swift */,
 				2A268DEF22C41D3200521A72 /* SectionTotal.swift */,
 				2A3CBC6C22C41802002D3E3E /* Assets.swift */,
+				2A88226322C54B5D009E46FA /* EditAssetForm.swift */,
 				2A88226122C50696009E46FA /* Extensions.swift */,
 				2A3CBC4022C41706002D3E3E /* Assets.xcassets */,
 				2A3CBC4522C41706002D3E3E /* LaunchScreen.storyboard */,
@@ -290,6 +293,7 @@
 				2A268DFA22C4DFD700521A72 /* AssetStore.swift in Sources */,
 				2A268DF022C41D3200521A72 /* SectionTotal.swift in Sources */,
 				2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */,
+				2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,22 @@ struct Asset : Identifiable {
     var lifetime: Int           // in years
     var isDepreciable: Bool     // non Depreciable assets are expences forming Working Capital
     var value: Int
+    
+    init() {
+        name = "New Asset or Expense"
+        description = "Description of the New Asset or Expense"
+        lifetime = 5
+        isDepreciable = true
+        value = 35000
+    }
+
+    init(name: String, description: String, lifetime: Int, isDepreciable: Bool, value: Int) {
+        self.name = name
+        self.description = description
+        self.lifetime = lifetime
+        self.isDepreciable = isDepreciable
+        self.value = value
+    }
 }
 
 
@@ -27,6 +43,7 @@ struct Assets {
     var maxLoss: Int
     var extraCapital: Int
 }
+
 
 #if DEBUG
 let testAssets = [
