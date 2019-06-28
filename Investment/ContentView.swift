@@ -13,6 +13,7 @@ struct ContentView : View {
     
     @State private var isAssetsOpen = true
     @State private var isWorkingCapitalOpen = true
+    @State private var showingEditSheet = false
     
     let currency = "€"
     
@@ -28,7 +29,10 @@ struct ContentView : View {
                     
                     if isAssetsOpen {
                         ForEach(store.assets) { asset in if asset.isDepreciable {
-                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
+                            // MARK: заменить на реальный
+                            NavigationButton(destination: EditAssetForm(asset: asset)) {
+                                SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
+                            }
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                             //  для тестирования   destination: Text("view for editing…")
                             }
@@ -70,7 +74,18 @@ struct ContentView : View {
             }
                 
                 .navigationBarTitle(Text("Investment"))
+                .navigationBarItems(trailing: PresentationButton(destination: DetailView()) {
+                    Image(systemName: "slider.horizontal.3")
+                })
         }
+    }
+    
+    var sheet: ActionSheet {
+        ActionSheet(title: Text("Action"),
+                    message: Text("Quote mark"),
+                    buttons: [.default(Text("Woo"), onTrigger: {
+            self.showingEditSheet = false
+        })])
     }
     
     func value() -> Int {
@@ -78,6 +93,12 @@ struct ContentView : View {
     }
     func depreciation() -> Int {
         store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / $1.lifetime / 12 })
+    }
+}
+
+struct DetailView: View {
+    var body: some View {
+        Text("Detail")
     }
 }
 

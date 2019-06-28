@@ -10,60 +10,70 @@ import SwiftUI
 
 struct EditAssetForm : View {
     @State var asset: Asset
-    @State var lifeTime: String
-    @State var amount: String
-
-    @State var quantity: Int = 0
     
     var body: some View {
         Form {
-
             Section(header: Text("Asset or Expense".uppercased())) {
                 
                 VStack(alignment: .leading) {
                     Text("Name")
-                    TextField($asset.name, placeholder: Text("New Asset or Expense"))
-                        .textFieldStyle(.roundedBorder)
+                        .padding(0)
+                        TextField($asset.name, placeholder: Text("New Asset or Expense"))
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundColor(.accentColor)
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("Description").padding(0)
-                    TextField($asset.description, placeholder: Text("Description of the New Asset or Expense"))
-                        .lineLimit(nil)
-                        .textFieldStyle(.roundedBorder)
+                    Text("Description")
+                        .padding(0)
+                        TextField($asset.description, placeholder: Text("Description of the New Asset or Expense"))
+                            .lineLimit(nil)
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundColor(.accentColor)
                 }
-                
+            
                 VStack {
                     HStack {
                         Text("Lifetime, years:")
                         Spacer()
-                    }.padding(0)
+                        }.padding(0)
+                    
                     SegmentedControl(selection: $asset.lifetime) {
                         ForEach(1...7) { index in
                             Text("\(index)").tag(index)
                         }
                     }
                 }
-
+            
                 Toggle(isOn: $asset.isDepreciable) {
                     Text("Asset is Depreciable")
                 }
-                
+    
                 HStack {
                     Text("Amount, €")
-                    TextField($amount, placeholder: Text("Value of the Asset or Expense"))
+                    TextField(.constant("150000"), placeholder: Text("Value of the Asset or Expense"))
                         .textFieldStyle(.roundedBorder)
+                        .foregroundColor(.accentColor)
                 }
-
+    
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Text("¿ Save ?")
+                            .foregroundColor(.accentColor)
+                    }
+                }
             }
         }
+            
+            .navigationBarTitle(Text("New Asset or Expense"))
     }
 }
 
 #if DEBUG
 struct EditAssetForm_Previews : PreviewProvider {
     static var previews: some View {
-        EditAssetForm(asset: Asset(), lifeTime: "5", amount: "150000")
+        EditAssetForm(asset: Asset())
 //            .previewLayout(.sizeThatFits)
     }
 }

@@ -21,6 +21,8 @@
 		2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC6C22C41802002D3E3E /* Assets.swift */; };
 		2A88226222C50696009E46FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226122C50696009E46FA /* Extensions.swift */; };
 		2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226322C54B5D009E46FA /* EditAssetForm.swift */; };
+		2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */; };
+		2AF97F1522C6000C00AAC401 /* RunModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF97F1422C6000C00AAC401 /* RunModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		2A3CBC6C22C41802002D3E3E /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		2A88226122C50696009E46FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A88226322C54B5D009E46FA /* EditAssetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetForm.swift; sourceTree = "<group>"; };
+		2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetail.swift; sourceTree = "<group>"; };
+		2AF97F1422C6000C00AAC401 /* RunModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +121,11 @@
 				2A3CBC3E22C41706002D3E3E /* ContentView.swift */,
 				2A3CBC6A22C41767002D3E3E /* SectionItem.swift */,
 				2A268DEF22C41D3200521A72 /* SectionTotal.swift */,
-				2A3CBC6C22C41802002D3E3E /* Assets.swift */,
 				2A88226322C54B5D009E46FA /* EditAssetForm.swift */,
+				2A3CBC6C22C41802002D3E3E /* Assets.swift */,
 				2A88226122C50696009E46FA /* Extensions.swift */,
+				2AF97F1422C6000C00AAC401 /* RunModal.swift */,
+				2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */,
 				2A3CBC4022C41706002D3E3E /* Assets.xcassets */,
 				2A3CBC4522C41706002D3E3E /* LaunchScreen.storyboard */,
 				2A3CBC4822C41706002D3E3E /* Info.plist */,
@@ -287,6 +293,7 @@
 			files = (
 				2A3CBC6B22C41767002D3E3E /* SectionItem.swift in Sources */,
 				2A3CBC3B22C41706002D3E3E /* AppDelegate.swift in Sources */,
+				2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */,
 				2A3CBC3D22C41706002D3E3E /* SceneDelegate.swift in Sources */,
 				2A88226222C50696009E46FA /* Extensions.swift in Sources */,
 				2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */,
@@ -294,6 +301,7 @@
 				2A268DF022C41D3200521A72 /* SectionTotal.swift in Sources */,
 				2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */,
 				2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */,
+				2AF97F1522C6000C00AAC401 /* RunModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
