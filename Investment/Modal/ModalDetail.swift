@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ModalDetail : View {
     @Binding var isShown: Bool
-    @State private var editingHappened = false
+    @State private var hasChanges = false
     
     @State private var stateOfTextField = "какой-то текст"
     
@@ -22,7 +22,7 @@ struct ModalDetail : View {
                 TextField(.constant(""),
                           placeholder: Text("some value"),
                           onEditingChanged: { (editting) in
-                            self.editingHappened = editting
+                            self.hasChanges = editting
                 })
                     .textFieldStyle(.roundedBorder)
 
@@ -51,7 +51,7 @@ struct ModalDetail : View {
         Button(action: {
             self.isShown.toggle() }) {
                 HStack {
-                    Text(editingHappened ? "Save(Done)" : "Cancel")
+                    Text(hasChanges ? "Save(Done)" : "Cancel")
                     Image(systemName: "xmark")
                 }
         }

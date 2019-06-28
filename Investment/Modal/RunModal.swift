@@ -21,6 +21,12 @@ struct RunModal : View {
                 .presentation(!isShown ? nil : Modal(ModalDetail(isShown: $isShown), onDismiss: {
                     self.isShown.toggle()
                 }))
+            //  MARK: -
+            //  MARK нужно что-то типа isModalInPresentation (UIKit)
+            //  15:00 Modernizing Your UI for iOS 13 - WWDC 2019 - Videos - Apple Developer
+            //  https://developer.apple.com/videos/play/wwdc2019/224/
+            //  https://developer.apple.com/documentation/uikit/view_controllers/disabling_pulling_down_a_sheet
+            //  https://medium.com/@hacknicity/view-controller-presentation-changes-in-ios-13-ac8c901ebc4e
         }
     }
 }

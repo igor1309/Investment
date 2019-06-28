@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView : View {
     @ObjectBinding var store = AssetStore()
     
-    @State private var isAssetsOpen = true
-    @State private var isWorkingCapitalOpen = true
+    @State private var isAssetsOpen = false
+    @State private var isWorkingCapitalOpen = false
     @State private var showingEditSheet = false
     
     let currency = "€"
@@ -40,7 +40,9 @@ struct ContentView : View {
                     }
                 }
                 
-                Section(header: Text("Working Capital".uppercased())) {
+                Section(header: Text("Working Capital".uppercased()),
+                        footer: Text("Working Capital includes items other than Assets t be financed from Investment (Capital), not Operations.").lineLimit(3)) {
+        //  MARK: - заменить выше на lineLimit(nil) когда исправят ошибку
                     SectionTotal(total: "Working Capital",
                                  value: store.assets.filter({ !$0.isDepreciable }).reduce(0, { $0 + $1.value }),
                                  isOpen: isWorkingCapitalOpen, depreciation: 0).previewLayout(.sizeThatFits)

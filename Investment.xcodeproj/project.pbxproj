@@ -19,6 +19,9 @@
 		2A3CBC5D22C41706002D3E3E /* InvestmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC5C22C41706002D3E3E /* InvestmentUITests.swift */; };
 		2A3CBC6B22C41767002D3E3E /* SectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC6A22C41767002D3E3E /* SectionItem.swift */; };
 		2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3CBC6C22C41802002D3E3E /* Assets.swift */; };
+		2A54571F22C6B41400285023 /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54571E22C6B41400285023 /* ProjectList.swift */; };
+		2A54572122C6B61700285023 /* ProjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54572022C6B61700285023 /* ProjectRow.swift */; };
+		2A54572322C6B6CD00285023 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54572222C6B6CD00285023 /* Project.swift */; };
 		2A88226222C50696009E46FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226122C50696009E46FA /* Extensions.swift */; };
 		2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226322C54B5D009E46FA /* EditAssetForm.swift */; };
 		2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */; };
@@ -61,6 +64,9 @@
 		2A3CBC5E22C41707002D3E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A3CBC6A22C41767002D3E3E /* SectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionItem.swift; sourceTree = "<group>"; };
 		2A3CBC6C22C41802002D3E3E /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		2A54571E22C6B41400285023 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
+		2A54572022C6B61700285023 /* ProjectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRow.swift; sourceTree = "<group>"; };
+		2A54572222C6B6CD00285023 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		2A88226122C50696009E46FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A88226322C54B5D009E46FA /* EditAssetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetForm.swift; sourceTree = "<group>"; };
 		2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetail.swift; sourceTree = "<group>"; };
@@ -118,14 +124,16 @@
 			children = (
 				2A3CBC3A22C41706002D3E3E /* AppDelegate.swift */,
 				2A3CBC3C22C41706002D3E3E /* SceneDelegate.swift */,
+				2A54571E22C6B41400285023 /* ProjectList.swift */,
+				2A54572022C6B61700285023 /* ProjectRow.swift */,
+				2A54572222C6B6CD00285023 /* Project.swift */,
 				2A3CBC3E22C41706002D3E3E /* ContentView.swift */,
 				2A3CBC6A22C41767002D3E3E /* SectionItem.swift */,
 				2A268DEF22C41D3200521A72 /* SectionTotal.swift */,
 				2A88226322C54B5D009E46FA /* EditAssetForm.swift */,
 				2A3CBC6C22C41802002D3E3E /* Assets.swift */,
 				2A88226122C50696009E46FA /* Extensions.swift */,
-				2AF97F1422C6000C00AAC401 /* RunModal.swift */,
-				2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */,
+				2A4710EC22C68B260080340A /* Modal */,
 				2A3CBC4022C41706002D3E3E /* Assets.xcassets */,
 				2A3CBC4522C41706002D3E3E /* LaunchScreen.storyboard */,
 				2A3CBC4822C41706002D3E3E /* Info.plist */,
@@ -158,6 +166,15 @@
 				2A3CBC5E22C41707002D3E3E /* Info.plist */,
 			);
 			path = InvestmentUITests;
+			sourceTree = "<group>";
+		};
+		2A4710EC22C68B260080340A /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				2AF97F1422C6000C00AAC401 /* RunModal.swift */,
+				2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A54572122C6B61700285023 /* ProjectRow.swift in Sources */,
 				2A3CBC6B22C41767002D3E3E /* SectionItem.swift in Sources */,
 				2A3CBC3B22C41706002D3E3E /* AppDelegate.swift in Sources */,
 				2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */,
 				2A3CBC3D22C41706002D3E3E /* SceneDelegate.swift in Sources */,
+				2A54572322C6B6CD00285023 /* Project.swift in Sources */,
 				2A88226222C50696009E46FA /* Extensions.swift in Sources */,
 				2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */,
 				2A268DFA22C4DFD700521A72 /* AssetStore.swift in Sources */,
@@ -302,6 +321,7 @@
 				2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */,
 				2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */,
 				2AF97F1522C6000C00AAC401 /* RunModal.swift in Sources */,
+				2A54571F22C6B41400285023 /* ProjectList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
