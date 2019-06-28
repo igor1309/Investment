@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct ModalDetail : View {
-    @State private var editingHappened = false
     @Binding var isShown: Bool
+    @State private var editingHappened = false
     
     @State private var stateOfTextField = "какой-то текст"
     
@@ -42,13 +42,18 @@ struct ModalDetail : View {
             }.padding()
             
                 .navigationBarTitle(Text("Modal"))
-                .navigationBarItems(trailing: Button(action: {
-                    self.isShown.toggle() }) {
+                
+                .navigationBarItems(trailing: closeButton)
+        }
+    }
+    
+    private var closeButton: some View {
+        Button(action: {
+            self.isShown.toggle() }) {
                 HStack {
                     Text(editingHappened ? "Save(Done)" : "Cancel")
                     Image(systemName: "xmark")
                 }
-                })
         }
     }
 }
