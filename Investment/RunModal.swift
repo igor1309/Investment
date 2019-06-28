@@ -9,16 +9,19 @@
 import SwiftUI
 
 struct RunModal : View {
-    @State private var modal = false
+    @State private var isShown = false
+    
     var body: some View {
-        Button(action: {
-            self.modal.toggle()
-        }) {
-            Text("Run Modal")
-            }
-            .presentation(!modal ? nil : Modal(ModalDetail(), onDismiss: {
-                self.modal.toggle()
-            }))
+        VStack {
+            Button(action: {
+                self.isShown.toggle()
+            }) {
+                Text("Run Modal")
+                }
+                .presentation(!isShown ? nil : Modal(ModalDetail(isShown: $isShown), onDismiss: {
+                    self.isShown.toggle()
+                }))
+        }
     }
 }
 
