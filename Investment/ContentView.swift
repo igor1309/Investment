@@ -24,14 +24,14 @@ struct ContentView : View {
                     SectionTotal(total: "Total Assets",
                                  value: store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value }),
                                  isOpen: isAssetsOpen,
-                                 depreciation: store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / $1.lifetime / 12 }))
+                                 depreciation: store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / ($1.lifetime ?? 1) / 12 }))
                         .tapAction { self.isAssetsOpen.toggle() }
                     
                     if isAssetsOpen {
                         ForEach(store.assets) { asset in if asset.isDepreciable {
                             // MARK: заменить на реальный
                             NavigationButton(destination: EditAssetForm(asset: asset)) {
-                                SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
+                                SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: (asset.lifetime ?? 1))
                             }
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                             //  для тестирования   destination: Text("view for editing…")
@@ -50,7 +50,7 @@ struct ContentView : View {
                     
                     if isWorkingCapitalOpen {
                         ForEach(store.assets) { asset in if !asset.isDepreciable {
-                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: asset.lifetime)
+                            SectionItem(heading: asset.name, subHeading: asset.description, value: asset.value, lifetime: (asset.lifetime ?? 1))
                             //TODO: - сделать изменение значения при двойном тапе вызовом нового вью
                             //  для тестирования   destination: Text("view for editing…")
                             }
@@ -94,7 +94,7 @@ struct ContentView : View {
         store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value })
     }
     func depreciation() -> Int {
-        store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / $1.lifetime / 12 })
+        store.assets.filter({ $0.isDepreciable }).reduce(0, { $0 + $1.value / ($1.lifetime ?? 1) / 12 })
     }
 }
 

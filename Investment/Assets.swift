@@ -12,7 +12,7 @@ struct Asset : Identifiable, Codable {
     var id = UUID()
     var name: String
     var description: String
-    var lifetime: Int           //MARK:- should be optional | in years | 1 if isDepreciable == false
+    var lifetime: Int?           //MARK:- should be optional | in years | 1 if isDepreciable == false
     var isDepreciable: Bool     // non Depreciable assets are expences forming Working Capital
     var value: Int
     
