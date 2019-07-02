@@ -22,10 +22,13 @@
 		2A54571F22C6B41400285023 /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54571E22C6B41400285023 /* ProjectList.swift */; };
 		2A54572122C6B61700285023 /* ProjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54572022C6B61700285023 /* ProjectRow.swift */; };
 		2A54572322C6B6CD00285023 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54572222C6B6CD00285023 /* Project.swift */; };
+		2A54572622C7545200285023 /* Assets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A54572522C7545200285023 /* Assets.plist */; };
+		2A54572922C75A9100285023 /* AssetsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A54572822C75A9100285023 /* AssetsList.swift */; };
 		2A88226222C50696009E46FA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226122C50696009E46FA /* Extensions.swift */; };
 		2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88226322C54B5D009E46FA /* EditAssetForm.swift */; };
 		2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */; };
 		2AF97F1522C6000C00AAC401 /* RunModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF97F1422C6000C00AAC401 /* RunModal.swift */; };
+		2AFD7CC622CB99F3009B68AD /* AssetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFD7CC522CB99F3009B68AD /* AssetRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +70,15 @@
 		2A54571E22C6B41400285023 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
 		2A54572022C6B61700285023 /* ProjectRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRow.swift; sourceTree = "<group>"; };
 		2A54572222C6B6CD00285023 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		2A54572522C7545200285023 /* Assets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Assets.plist; sourceTree = "<group>"; };
+		2A54572722C7586B00285023 /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
+		2A54572822C75A9100285023 /* AssetsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsList.swift; sourceTree = "<group>"; };
+		2A54572A22C76A3100285023 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2A88226122C50696009E46FA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2A88226322C54B5D009E46FA /* EditAssetForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetForm.swift; sourceTree = "<group>"; };
 		2AF97F1022C5FF9100AAC401 /* ModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetail.swift; sourceTree = "<group>"; };
 		2AF97F1422C6000C00AAC401 /* RunModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunModal.swift; sourceTree = "<group>"; };
+		2AFD7CC522CB99F3009B68AD /* AssetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,6 @@
 		2A3CBC2E22C41706002D3E3E = {
 			isa = PBXGroup;
 			children = (
-				2A268DF922C4DFD700521A72 /* AssetStore.swift */,
 				2A3CBC3922C41706002D3E3E /* Investment */,
 				2A3CBC5022C41706002D3E3E /* InvestmentTests */,
 				2A3CBC5B22C41706002D3E3E /* InvestmentUITests */,
@@ -132,6 +139,12 @@
 				2A268DEF22C41D3200521A72 /* SectionTotal.swift */,
 				2A88226322C54B5D009E46FA /* EditAssetForm.swift */,
 				2A3CBC6C22C41802002D3E3E /* Assets.swift */,
+				2A54572822C75A9100285023 /* AssetsList.swift */,
+				2AFD7CC522CB99F3009B68AD /* AssetRow.swift */,
+				2A54572A22C76A3100285023 /* MyPlayground.playground */,
+				2A54572522C7545200285023 /* Assets.plist */,
+				2A54572722C7586B00285023 /* Notes.md */,
+				2A268DF922C4DFD700521A72 /* AssetStore.swift */,
 				2A88226122C50696009E46FA /* Extensions.swift */,
 				2A4710EC22C68B260080340A /* Modal */,
 				2A3CBC4022C41706002D3E3E /* Assets.xcassets */,
@@ -282,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3CBC4722C41706002D3E3E /* LaunchScreen.storyboard in Resources */,
+				2A54572622C7545200285023 /* Assets.plist in Resources */,
 				2A3CBC4422C41706002D3E3E /* Preview Assets.xcassets in Resources */,
 				2A3CBC4122C41706002D3E3E /* Assets.xcassets in Resources */,
 			);
@@ -309,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A54572122C6B61700285023 /* ProjectRow.swift in Sources */,
+				2AFD7CC622CB99F3009B68AD /* AssetRow.swift in Sources */,
 				2A3CBC6B22C41767002D3E3E /* SectionItem.swift in Sources */,
 				2A3CBC3B22C41706002D3E3E /* AppDelegate.swift in Sources */,
 				2AF97F1122C5FF9100AAC401 /* ModalDetail.swift in Sources */,
@@ -317,6 +332,7 @@
 				2A88226222C50696009E46FA /* Extensions.swift in Sources */,
 				2A3CBC6D22C41802002D3E3E /* Assets.swift in Sources */,
 				2A268DFA22C4DFD700521A72 /* AssetStore.swift in Sources */,
+				2A54572922C75A9100285023 /* AssetsList.swift in Sources */,
 				2A268DF022C41D3200521A72 /* SectionTotal.swift in Sources */,
 				2A3CBC3F22C41706002D3E3E /* ContentView.swift in Sources */,
 				2A88226422C54B5D009E46FA /* EditAssetForm.swift in Sources */,

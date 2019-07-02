@@ -18,18 +18,39 @@ struct ProjectRow : View {
                 
                 Spacer()
                 
-                Text("\(project.budget)") //MARK: сделать форматирование числа
+                Text("\(String(project.currency.rawValue)) \(project.budget)") //MARK: сделать форматирование числа
                     .font(.callout)
             }
             
-            Text(project.city)
-                .font(.callout)
-                .color(.secondary)
-            
-            Text(project.decribtion)
+            HStack {
+                Text(project.city)
+                    .font(.callout)
+                    .color(.secondary)
+                
+                Spacer()
+                
+                Text(project.status.rawValue)
+                    .font(.footnote)
+                    .color(.primary)
+            }
+
+            Text(project.description)
                 .font(.callout)
                 .color(.secondary)
                 .lineLimit(nil)
+
+            HStack(alignment: .firstTextBaseline) {
+//                Image(systemName: "doc.plaintext")
+//                    .imageScale(.small)
+//                    .foregroundColor(.secondary)
+                Text("❂")
+                    .font(.footnote)
+                    .color(.secondary)
+                Text("" + project.comment)
+                    .font(.footnote)
+                    .color(.secondary)
+                    .lineLimit(nil)
+            }
         }
     }
 }
@@ -38,9 +59,9 @@ struct ProjectRow : View {
 struct ProjectRow_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            ProjectRow(project: testProjects[0])
+            ProjectRow(project: testProjects[2])
                 .previewLayout(.sizeThatFits)
-            ProjectRow(project: testProjects[0])
+            ProjectRow(project: testProjects[2])
                 .previewLayout(.sizeThatFits)
                 .environment(\.sizeCategory, .extraExtraLarge)
         }

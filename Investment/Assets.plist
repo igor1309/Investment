@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>isDepreciable</key>
+		<true/>
+		<key>value</key>
+		<integer>280000</integer>
+		<key>lifetime</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>Selling Price</string>
+		<key>description</key>
+		<string>Asked or estimated price</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<true/>
+		<key>value</key>
+		<integer>157000</integer>
+		<key>lifetime</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>All Additions</string>
+		<key>description</key>
+		<string>Furniture, Kitchen, Structural, Renovation, etc</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<true/>
+		<key>value</key>
+		<integer>8800</integer>
+		<key>lifetime</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>Services</string>
+		<key>description</key>
+		<string>Real estate agent graphic designer, web, PR (openning), etc</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<true/>
+		<key>value</key>
+		<integer>6700</integer>
+		<key>lifetime</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>Bureaucracy</string>
+		<key>description</key>
+		<string>Notary, company registration, etc</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<false/>
+		<key>value</key>
+		<integer>7700</integer>
+		<key>lifetime</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Rent Deposit</string>
+		<key>description</key>
+		<string>To cover the first and last mobths of rent</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<false/>
+		<key>value</key>
+		<integer>47600</integer>
+		<key>lifetime</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Max Cumulative Loss</string>
+		<key>description</key>
+		<string>Estimated peak cummulative loss to be finaced by investment</string>
+	</dict>
+	<dict>
+		<key>isDepreciable</key>
+		<false/>
+		<key>value</key>
+		<integer>25000</integer>
+		<key>lifetime</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Extra Working Capital</string>
+		<key>description</key>
+		<string>&quot;Buffer&quot;</string>
+	</dict>
+</array>
+</plist>
