@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-class AssetStore : BindableObject {
+class AssetStore : ObservableObject {
     var assets: [Asset] {
         didSet { didChange.send(()) }
     }

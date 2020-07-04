@@ -18,9 +18,9 @@ struct RunModal : View {
             }) {
                 Text("Run Modal")
                 }
-                .presentation(!isShown ? nil : Modal(ModalDetail(isShown: $isShown), onDismiss: {
-                    self.isShown.toggle()
-                }))
+            .sheet(isPresented: $isShown) {
+                ModalDetail(isShown: $isShown)
+            }
             //  MARK: -
             //  MARK нужно что-то типа isModalInPresentation (UIKit)
             //  15:00 Modernizing Your UI for iOS 13 - WWDC 2019 - Videos - Apple Developer

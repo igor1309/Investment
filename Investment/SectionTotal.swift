@@ -30,7 +30,7 @@ struct SectionTotal : View {
             if depreciation != 0 {
                 Text("Depreciation: \(currency)\(Int(depreciation)) per month")
                     .font(.footnote)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
             }
         }
     }

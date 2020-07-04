@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProjectList : View {
-//    var projects = [Project]
+    //    var projects = [Project]
     
     @State var projects = [
         Project(name: "To The Bone Charlottenburg", description: "New venture with Giacomo, upscaled To The Bone", budget: 500000, currency: .euro, status: .preparation, comment: "ищем помещение"),
@@ -21,15 +21,22 @@ struct ProjectList : View {
         NavigationView {
             
             List(projects) { project in
-                NavigationButton(destination: Text("детали…"), isDetail: true) {
+                NavigationLink(destination: Text("детали…")) {
                     ProjectRow(project: project)
                 }
             }
             
-                .navigationBarTitle(Text("Restaurant Projects"))
-                .navigationBarItems(leading: Button(action: {},label: { Image(systemName: "slider.horizontal.3") }),
-                                    trailing: Button(action: addProject,
-                                                     label: { Image(systemName: "plus") }))
+            .navigationBarTitle(Text("Restaurant Projects"))
+            .navigationBarItems(
+                leading: Button(action: {
+                    
+                }) {
+                    Image(systemName: "slider.horizontal.3")
+                },
+                trailing: Button(action: addProject) {
+                    Image(systemName: "plus")
+                }
+            )
         }
     }
     

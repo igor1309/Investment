@@ -23,7 +23,7 @@ struct SectionItem : View {
                     Text(heading)
                     Text(subHeading)
                         .font(.footnote)
-                        .color(.secondary)
+                        .foregroundColor(.secondary)
                         .lineLimit(nil)
                 }
                 
@@ -38,7 +38,7 @@ struct SectionItem : View {
             if lifetime != 0 {
                 Text("Depreciation: \(lifetime) years, \(currency)\(value / lifetime / 12) per month")
                     .font(.caption)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
                     .padding(0)
             }
         }

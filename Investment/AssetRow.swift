@@ -21,11 +21,12 @@ struct AssetRow : View {
             }
             
             if period == nil {
-                SegmentedControl(selection: .constant(1)) {
-                    ForEach(1...9) { index in
+                Picker("", selection: .constant(1)) {
+                    ForEach(1..<10) { index in
                         Text("\(index)").tag(index)
                     }
                 }
+                .pickerStyle(SegmentedPickerStyle())
             }
         }
     }

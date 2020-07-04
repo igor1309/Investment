@@ -19,41 +19,41 @@ struct ModalDetail : View {
             VStack(alignment: .leading) {
                 Text("Modal details here:").font(.headline)
                 
-                TextField(.constant(""),
-                          placeholder: Text("some value"),
+                TextField("some value",
+                          text: .constant(""),
                           onEditingChanged: { (editting) in
                             self.hasChanges = editting
-                })
-                    .textFieldStyle(.roundedBorder)
-
+                          })
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
                 //  MARK: -
                 //  MARK: нужно разобраться с onEditingChanged: и onCommit: для TextField
-                TextField(.constant("some value 2"),
-                          placeholder: Text("some text"),
+                TextField("some text",
+                          text: .constant("some value 2"),
                           onEditingChanged: { (changed) in
                             self.stateOfTextField = "Editing Changed"
-                }) {
+                          }) {
                     self.stateOfTextField = "Editing Commited"
-                    }
-                    .textFieldStyle(.roundedBorder)
+                }
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Text(stateOfTextField)
                 
             }.padding()
             
-                .navigationBarTitle(Text("Modal"))
-                
-                .navigationBarItems(trailing: closeButton)
+            .navigationBarTitle(Text("Modal"))
+            
+            .navigationBarItems(trailing: closeButton)
         }
     }
     
     private var closeButton: some View {
         Button(action: {
-            self.isShown.toggle() }) {
-                HStack {
-                    Text(hasChanges ? "Save(Done)" : "Cancel")
-                    Image(systemName: "xmark")
-                }
+                self.isShown.toggle() }) {
+            HStack {
+                Text(hasChanges ? "Save(Done)" : "Cancel")
+                Image(systemName: "xmark")
+            }
         }
     }
 }

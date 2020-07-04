@@ -25,18 +25,18 @@ struct ProjectRow : View {
             HStack {
                 Text(project.city)
                     .font(.callout)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
                 
                 Spacer()
                 
                 Text(project.status.rawValue)
                     .font(.footnote)
-                    .color(.primary)
+                    .foregroundColor(.primary)
             }
 
             Text(project.description)
                 .font(.callout)
-                .color(.secondary)
+                .foregroundColor(.secondary)
                 .lineLimit(nil)
 
             HStack(alignment: .firstTextBaseline) {
@@ -45,10 +45,10 @@ struct ProjectRow : View {
 //                    .foregroundColor(.secondary)
                 Text("❂")
                     .font(.footnote)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
                 Text("" + project.comment)
                     .font(.footnote)
-                    .color(.secondary)
+                    .foregroundColor(.secondary)
                     .lineLimit(nil)
             }
         }

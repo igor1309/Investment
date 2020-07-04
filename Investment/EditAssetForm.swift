@@ -18,17 +18,17 @@ struct EditAssetForm : View {
                 VStack(alignment: .leading) {
                     Text("Name")
                         .padding(0)
-                        TextField($asset.name, placeholder: Text("New Asset or Expense"))
-                            .textFieldStyle(.roundedBorder)
+                    TextField("New Asset or Expense", text: $asset.name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                             .foregroundColor(.accentColor)
                 }
                 
                 VStack(alignment: .leading) {
                     Text("Description")
                         .padding(0)
-                        TextField($asset.description, placeholder: Text("Description of the New Asset or Expense"))
+                    TextField("Description of the New Asset or Expense", text: $asset.description)
                             .lineLimit(nil)
-                            .textFieldStyle(.roundedBorder)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                             .foregroundColor(.accentColor)
                 }
             
@@ -38,11 +38,12 @@ struct EditAssetForm : View {
                         Spacer()
                         }.padding(0)
                     
-                    SegmentedControl(selection: $asset.lifetime) {
-                        ForEach(1...7) { index in
+                    Picker("Lifetime", selection: $asset.lifetime) {
+                        ForEach(1..<8) { index in
                             Text("\(index)").tag(index)
                         }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
             
                 Toggle(isOn: $asset.isDepreciable) {
@@ -51,8 +52,8 @@ struct EditAssetForm : View {
     
                 HStack {
                     Text("Amount, €")
-                    TextField(.constant("150000"), placeholder: Text("Value of the Asset or Expense"))
-                        .textFieldStyle(.roundedBorder)
+                    TextField("Value of the Asset or Expense", text: .constant("150000"))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .foregroundColor(.accentColor)
                 }
     
